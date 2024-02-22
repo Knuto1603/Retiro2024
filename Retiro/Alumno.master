@@ -10,6 +10,13 @@
     </asp:ContentPlaceHolder>
 </asp:Content>
 
+<asp:Content ID ="Datos" ContentPlaceHolderID ="Datos" runat="server">
+    <asp:ContentPlaceHolder ID="DatosAlum" runat="server">
+
+    </asp:ContentPlaceHolder>
+
+</asp:Content>
+
 <asp:Content ID="Content3" ContentPlaceHolderID="body" runat="server">
 
      <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -51,6 +58,7 @@
         </nav>
 
     <asp:ContentPlaceHolder ID="body" runat="server">
+
     </asp:ContentPlaceHolder>
 
 
