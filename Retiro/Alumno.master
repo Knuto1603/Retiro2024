@@ -43,7 +43,7 @@
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Retirar Curso
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="Index.aspx">Solicitar Retiro</a></li>
+                                <li><a class="dropdown-item" href="PagInicioAlumno.aspx">Solicitar Retiro</a></li>
                                 <li><a class="dropdown-item" href="CosultarEstado.aspx">Estado Solicitud</a></li>
 
                             </ul>
@@ -56,10 +56,10 @@
                 </div>
             </div>
         </nav>
-
-    <asp:ContentPlaceHolder ID="body" runat="server">
-
-    </asp:ContentPlaceHolder>
+        <br />
+        <asp:ContentPlaceHolder ID="body" runat="server" >
+        </asp:ContentPlaceHolder>
+ 
 
 
 </asp:Content>

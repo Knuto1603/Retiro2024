@@ -68,7 +68,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Vista\PagInicio.aspx" />
+    <Content Include="Vista\PagInicioAlumno.aspx" />
+    <Content Include="Vista\SolicitarRetiro.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -79,6 +80,15 @@
     <Compile Include="Alumno.master.designer.cs">
       <DependentUpon>Alumno.master</DependentUpon>
     </Compile>
+    <Compile Include="Controlador\Control.cs" />
+    <Compile Include="Modelo\BD.cs" />
+    <Compile Include="Secretario.master.cs">
+      <DependentUpon>Secretario.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Secretario.master.designer.cs">
+      <DependentUpon>Secretario.master</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Master.Master.cs">
       <DependentUpon>Master.Master</DependentUpon>
@@ -87,16 +97,24 @@
     <Compile Include="Master.Master.designer.cs">
       <DependentUpon>Master.Master</DependentUpon>
     </Compile>
-    <Compile Include="Vista\PagInicio.aspx.cs">
-      <DependentUpon>PagInicio.aspx</DependentUpon>
+    <Compile Include="Vista\PagInicioAlumno.aspx.cs">
+      <DependentUpon>PagInicioAlumno.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Vista\PagInicio.aspx.designer.cs">
-      <DependentUpon>PagInicio.aspx</DependentUpon>
+    <Compile Include="Vista\PagInicioAlumno.aspx.designer.cs">
+      <DependentUpon>PagInicioAlumno.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\SolicitarRetiro.aspx.cs">
+      <DependentUpon>SolicitarRetiro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\SolicitarRetiro.aspx.designer.cs">
+      <DependentUpon>SolicitarRetiro.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Alumno.master" />
+    <Content Include="Secretario.master" />
     <None Include="packages.config" />
     <Content Include="Master.Master" />
     <None Include="Web.Debug.config">
@@ -106,6 +124,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
