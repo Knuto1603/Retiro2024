@@ -59,7 +59,5 @@
         <br />
         <asp:ContentPlaceHolder ID="body" runat="server" >
         </asp:ContentPlaceHolder>
- 
-
 
 </asp:Content>

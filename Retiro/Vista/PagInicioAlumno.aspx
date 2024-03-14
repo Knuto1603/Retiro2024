@@ -1,6 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Alumno.Master" AutoEventWireup="true" CodeBehind="PagInicioAlumno.aspx.cs" Inherits="Retiro.Vista.WebForm1" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+
+
 </asp:Content>
 
 <asp:Content ID="Datos" ContentPlaceHolderID="DatosAlum" runat="server">
@@ -47,7 +50,7 @@
 
         
         <!-- Grid View -->
-        <asp:GridView runat="server" AutoGenerateColumns="False" DataSourceID="cursos" CssClass="table table-bordered" OnSelectedIndexChanged="DetalleAlumno">
+        <asp:GridView runat="server" AutoGenerateColumns="False" DataSourceID="cursos" CssClass="table table-bordered" OnSelectedIndexChanged="DetalleAlumno" OnRowCommand="GridView_RowCommand">
             <RowStyle CssClass="table-primary" />
             <HeaderStyle CssClass="thead-dark" />
 
@@ -61,7 +64,7 @@
                 <asp:TemplateField HeaderText="Detalle">
                     <ItemTemplate>
                         <!-- Añadir boton a final de la fila -->
-                        <asp:Button ID="DetalleAlumno" runat="server" Text="Solicitar Retiro" OnClick="DetalleAlumno" CssClass="btn btn-primary" />
+                        <asp:Button ID="DetalleAlumno" runat="server" Text="Solicitar Retiro" CommandName="DetalleCommand" CommandArgument='<%# Container.DataItemIndex %>' CssClass="btn btn-primary" />
                     </ItemTemplate>
                 </asp:TemplateField>
             </Columns>
@@ -72,8 +75,6 @@
 
     </div>
 
-
 </asp:Content>
-
 
 

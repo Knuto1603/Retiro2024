@@ -9,7 +9,7 @@ using System.Web.UI.WebControls;
 using System.Data;
 using System.Diagnostics;
 using Retiro.Modelo;
-using Retiro.Controlador;
+
 
 
 
@@ -18,12 +18,11 @@ namespace Retiro.Vista
     public partial class WebForm1 : System.Web.UI.Page
 
     {
-        Retiro.Controlador.Control control;
+
         protected void Page_Load(object sender, EventArgs e)
 
         {
-            Retiro.Modelo.BD modelo = new Retiro.Modelo.BD();
-            control = new Retiro.Controlador.Control(modelo);
+
 
             if (!IsPostBack)
             {
@@ -69,13 +68,36 @@ namespace Retiro.Vista
 
         protected void DetalleAlumno(object sender, EventArgs e)
         {
-            Response.Redirect("SolicitarRetiro.aspx");
+            //Response.Redirect("SolicitarRetiro.aspx");
         }
 
         protected void Unnamed1_SelectedIndexChanged1(object sender, EventArgs e)
         {
 
         }
+        protected void GridView_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName == "DetalleCommand")
+            {
+                int rowIndex = Convert.ToInt32(e.CommandArgument);
+
+
+                GridView gridView = (GridView)sender;
+                // Puedes acceder a los datos de la fila usando el índice de la fila (rowIndex)
+                string id = gridView.Rows[rowIndex].Cells[0].Text;
+                string codCurso = gridView.Rows[rowIndex].Cells[1].Text;
+                string nombre = gridView.Rows[rowIndex].Cells[2].Text;
+                string creditos = gridView.Rows[rowIndex].Cells[3].Text;
+
+                // Puedes utilizar los datos según tus necesidades
+                // Por ejemplo, imprimirlos en la consola para verificar
+                Response.Redirect("SolicitarRetiro.aspx");
+                Console.WriteLine($"ID: {id}, Código Curso: {codCurso}, Nombre: {nombre}, Créditos: {creditos}");
+
+                // Luego, puedes realizar cualquier acción adicional que necesites
+            }
+        }
+
 
         protected void Cursos_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
         {
@@ -86,5 +108,11 @@ namespace Retiro.Vista
         {
 
         }
+
+        protected void btnClosePopup_Click(object sender, EventArgs e)
+        {
+            // Puedes realizar acciones al cerrar el popup si es necesario
+        }
+
     }
 }

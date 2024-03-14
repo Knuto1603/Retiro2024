@@ -13,5 +13,14 @@ namespace Retiro.Vista
         {
 
         }
+
+        protected void enviarSolicitud(object sender, EventArgs e)
+        {
+
+            string script = "alert('Registrado con exito');";
+            ClientScript.RegisterStartupScript(this.GetType(), "alert", script, true);
+
+            Response.Redirect("PagInicioAlumno.aspx");
+        }
     }
 }
